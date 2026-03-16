@@ -1,0 +1,317 @@
+{
+  "version": "3.0.0",
+  "description": "Operational, Governance, and Incident Response Ontology for Agent-driven RCA and Compliance Intelligence",
+  "nodes": [
+
+    {
+      "label": "System",
+      "primaryKey": "system_id",
+      "properties": {
+        "system_id": "string",
+        "name": "string",
+        "type": "string",
+        "environment": "string",
+        "owner_team": "string"
+      }
+    },
+
+    {
+      "label": "Job",
+      "primaryKey": "job_id",
+      "properties": {
+        "job_id": "string",
+        "name": "string",
+        "status": "string",
+        "trigger_type": "string",
+        "owner_team": "string",
+        "start_time": "datetime",
+        "end_time": "datetime"
+      }
+    },
+
+    {
+      "label": "Pipeline",
+      "primaryKey": "pipeline_id",
+      "properties": {
+        "pipeline_id": "string",
+        "name": "string",
+        "type": "string",
+        "schedule": "string",
+        "owner_team": "string",
+        "status": "string",
+        "created_at": "datetime"
+      }
+    },
+
+    {
+      "label": "Script",
+      "primaryKey": "script_id",
+      "properties": {
+        "script_id": "string",
+        "name": "string",
+        "language": "string",
+        "version": "string",
+        "repository": "string",
+        "checksum": "string",
+        "created_at": "datetime"
+      }
+    },
+
+    {
+      "label": "Transformation",
+      "primaryKey": "transformation_id",
+      "properties": {
+        "transformation_id": "string",
+        "type": "string",
+        "description": "string",
+        "sequence_order": "integer",
+        "created_at": "datetime"
+      }
+    },
+
+    {
+      "label": "CodeEvent",
+      "primaryKey": "event_id",
+      "properties": {
+        "event_id": "string",
+        "repo_platform": "string",
+        "repo_name": "string",
+        "branch": "string",
+        "author": "string",
+        "timestamp": "datetime",
+        "message": "string",
+        "external_url": "string"
+      }
+    },
+
+    {
+      "label": "DataSource",
+      "primaryKey": "source_id",
+      "properties": {
+        "source_id": "string",
+        "name": "string",
+        "type": "string",
+        "environment": "string",
+        "owner_team": "string",
+        "status": "string",
+        "created_at": "datetime"
+      }
+    },
+
+    {
+      "label": "Dataset",
+      "primaryKey": "dataset_id",
+      "properties": {
+        "dataset_id": "string",
+        "name": "string",
+        "domain": "string",
+        "storage_type": "string",
+        "description": "string",
+        "status": "string"
+      }
+    },
+
+    {
+      "label": "Table",
+      "primaryKey": "table_id",
+      "properties": {
+        "table_id": "string",
+        "name": "string",
+        "schema": "string",
+        "storage_type": "string",
+        "refresh_type": "string",
+        "row_count": "integer",
+        "status": "string",
+        "owner_team": "string",
+        "created_at": "datetime"
+      }
+    },
+
+    {
+      "label": "Column",
+      "primaryKey": "column_id",
+      "properties": {
+        "column_id": "string",
+        "name": "string",
+        "data_type": "string",
+        "nullable": "boolean",
+        "is_primary_key": "boolean",
+        "ordinal_position": "integer",
+        "status": "string",
+        "created_at": "datetime"
+      }
+    },
+
+    {
+      "label": "LogSource",
+      "primaryKey": "log_id",
+      "properties": {
+        "log_id": "string",
+        "name": "string",
+        "platform": "string",
+        "path": "string",
+        "log_type": "string",
+        "retention_days": "integer",
+        "owner_team": "string",
+        "created_at": "datetime"
+      }
+    },
+
+    {
+      "label": "Regulation",
+      "primaryKey": "regulation_id",
+      "properties": {
+        "regulation_id": "string",
+        "name": "string",
+        "jurisdiction": "string",
+        "effective_date": "date",
+        "status": "string"
+      }
+    },
+
+    {
+      "label": "ControlObjective",
+      "primaryKey": "control_id",
+      "properties": {
+        "control_id": "string",
+        "name": "string",
+        "description": "string",
+        "severity": "string",
+        "recommendation": "string",
+        "recommendation_type": "string"
+      }
+    },
+
+    {
+      "label": "Rule",
+      "primaryKey": "rule_id",
+      "properties": {
+        "rule_id": "string",
+        "name": "string",
+        "rule_type": "string",
+        "threshold": "string",
+        "is_blocking": "boolean",
+        "created_at": "datetime"
+      }
+    },
+
+    {
+      "label": "Owner",
+      "primaryKey": "owner_id",
+      "properties": {
+        "owner_id": "string",
+        "name": "string",
+        "email": "string",
+        "role": "string"
+      }
+    },
+
+    {
+      "label": "Violation",
+      "primaryKey": "violation_id",
+      "properties": {
+        "violation_id": "string",
+        "message": "string",
+        "severity": "string",
+        "detected_at": "datetime",
+        "status": "string"
+      }
+    },
+
+    {
+      "label": "Incident",
+      "primaryKey": "incident_id",
+      "properties": {
+        "incident_id": "string",
+        "ticket_number": "string",
+        "status": "string",
+        "priority": "string",
+        "created_at": "datetime",
+        "source": "string"
+      }
+    },
+
+    {
+      "label": "Escalation",
+      "primaryKey": "escalation_id",
+      "properties": {
+        "escalation_id": "string",
+        "channel": "string",
+        "priority": "string",
+        "sla_hours": "integer",
+        "created_at": "datetime"
+      }
+    },
+
+    {
+      "label": "Remediation",
+      "primaryKey": "remediation_id",
+      "properties": {
+        "remediation_id": "string",
+        "description": "string",
+        "runbook": "string",
+        "automation_script": "string",
+        "created_at": "datetime"
+      }
+    }
+
+  ],
+
+  "relationships": [
+
+    { "type": "RUNS_JOB", "from": "System", "to": "Job" },
+
+    { "type": "DEPENDS_ON", "from": "Job", "to": "Job" },
+
+    { "type": "EXECUTES", "from": "Job", "to": "Pipeline" },
+
+    { "type": "USES_SCRIPT", "from": "Pipeline", "to": "Script" },
+
+    { "type": "HAS_TRANSFORMATION", "from": "Pipeline", "to": "Transformation" },
+
+    { "type": "TYPICALLY_IMPLEMENTS", "from": "Script", "to": "Transformation" },
+
+    { "type": "READS", "from": "Script", "to": "Table" },
+
+    { "type": "WRITES", "from": "Script", "to": "Table" },
+
+    { "type": "CONTAINS", "from": "Dataset", "to": "Table" },
+
+    { "type": "HAS_COLUMN", "from": "Table", "to": "Column" },
+
+    { "type": "DERIVED_FROM", "from": "Column", "to": "Column" },
+
+    { "type": "SOURCED_FROM", "from": "Table", "to": "DataSource" },
+
+    { "type": "CHANGED_BY", "from": "Script", "to": "CodeEvent" },
+
+    { "type": "LOGGED_IN", "from": "System", "to": "LogSource" },
+    { "type": "LOGGED_IN", "from": "Job", "to": "LogSource" },
+    { "type": "LOGGED_IN", "from": "Pipeline", "to": "LogSource" },
+
+    { "type": "MANDATES", "from": "Regulation", "to": "ControlObjective" },
+
+    { "type": "IMPLEMENTED_BY", "from": "ControlObjective", "to": "Rule" },
+
+    { "type": "ENFORCED_BY", "from": "Rule", "to": "Transformation" },
+
+    { "type": "OWNS_PIPELINE", "from": "Owner", "to": "Pipeline" },
+
+    { "type": "OWNS_JOB", "from": "Owner", "to": "Job" },
+
+    { "type": "OWNS_SYSTEM", "from": "Owner", "to": "System" },
+
+    { "type": "OWNS_CONTROL", "from": "Owner", "to": "ControlObjective" },
+
+    { "type": "GENERATES", "from": "Rule", "to": "Violation" },
+
+    { "type": "CREATES", "from": "Violation", "to": "Incident" },
+
+    { "type": "TRIGGERS", "from": "Incident", "to": "Escalation" },
+
+    { "type": "ASSIGNED_TO", "from": "Escalation", "to": "Owner" },
+
+    { "type": "RESOLVED_BY", "from": "Incident", "to": "Remediation" }
+
+  ]
+}
