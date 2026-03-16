@@ -1,7 +1,6 @@
 {
   "version": "3.0.0",
   "description": "Operational, Governance, and Incident Response Ontology for Agent-driven RCA and Compliance Intelligence",
-
   "nodes": [
 
     {
